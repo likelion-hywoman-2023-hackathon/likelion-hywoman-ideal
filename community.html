@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Community</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="/community.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d9483ff595.js" crossorigin="anonymous"></script>
+
+    <style>
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .out-top {
+            animation: rotate 20s linear infinite;
+            transform-origin: 13px 25px;
+        }
+
+        .in-top {
+            animation: rotate 10s linear infinite;
+            transform-origin: 13px 25px;
+        }
+
+        .out-bottom {
+            animation: rotate 25s linear infinite;
+            transform-origin: 84px 93px;
+        }
+
+        .in-bottom {
+            animation: rotate 15s linear infinite;
+            transform-origin: 84px 93px;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(244, 247, 208);">
+    <!-- 
+- Single file SVG animation
+- * can be used as CSS backgroud
+- * total size is less than 2kb!
+-->
+
+    <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+        <defs>
+
+        </defs>
+        <path fill="#D8D8D8" class="out-top"
+            d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z" />
+        <path fill="#A4A4A4" class="in-top"
+            d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z" />
+        <path fill="#F2F2F2" class="out-bottom"
+            d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z" />
+        <path fill="#E6E6E6" class="in-bottom"
+            d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z" />
+    </svg>
+
+
+    <nav>
+        <!--사진은 위에 첨부했는데 각자 저장한 이름 대로 해 주세요 -->
+        <span class=""><a href="#"><img src="/img/logo-notStr.png" alt="logoImage"></a></span>
+        <span class="web-name">EYE CONTACT</span>
+        <div class="toggle">
+            <!--주의 폰트어썸 링크 & 제이쿼 head에 추가 필요  -->
+
+            <i class="fa fa-bars menu" aria-hidden="true"></i>
+        </div>
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">매칭</a></li>
+            <!-- 커뮤 링크는 #로 해두셔도 됩니더 -->
+            <li><a href="community.html">커뮤니티</a></li>
+            <li><a href="#">마이페이지</a></li>
+        </ul>
+    </nav>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu').click(function () {
+                $('ul').toggleClass('active');
+            })
+        })
+    </script>
+
+
+
+
+    <div class="layout">
+
+
+        <div class="container">
+            <div class="titleText">
+                <span id="str1">묻고<br>답해요</span>
+                <span id="soundIcon"><i class="fa-solid fa-volume-high" style="color: #ffffff;" id="playButton"
+                        alt="음성 재생 버튼" style="cursor: pointer;"></i></span>
+                <audio id="audioPlayer">
+                    <source src="/mp3/묻고 답해요.mp3" type="audio/mpeg">
+                </audio>
+                <div class="str2">어플리케이션 사용 중 궁금한 점을 질문해요</div>
+            </div>
+        </div>
+        <script>
+            const playButton = document.getElementById('playButton');
+            const audioPlayer = document.getElementById('audioPlayer');
+            playButton.addEventListener('click', () => {
+                audioPlayer.play();
+            })
+        </script>
+
+        <!-- 작성하기 버튼 -->
+        <button class="btn-1"><a href="writing.html"> 작성하기</a>
+        </button>
+
+        <!-- 글  -->
+        <!-- 글이 또 업로드가 된다면 여기서부터 -->
+        <div class="article">
+            <!-- 사진 -->
+            <span id="profile">
+                <i class="fas fa-duotone fa-user"></i>
+            </span>
+
+            <!-- 유저 이름 -->
+            <span id="userName">
+                홍길동
+            </span>
+
+            <br>
+
+
+            <div id="question">
+                <p>
+                    최대 ~글자만 보이고 나머지는 안 보이는 시스템입니다 안녕 안녕 안녕
+                    안녕 안녕 안녕 안녕 안녕 가리기 가리기 가리기 가리기 가리기 테스트
+                </p>
+            </div>
+
+            <!-- 0815 -->
+            <!-- 태그, class 이름 변경 + css 변경 -->
+            <div class="btn2">
+                <span class="count-comment">댓글 3</span>
+                <span>
+                    <button class="button">
+                        <span class="button-content"><a href="posted.html">보러 가기</a></span>
+                    </button>
+                </span>
+            </div>
+
+
+        </div>
+        <!-- 여기까지가 반복되면 됩니다 -->
+
+        <footer></footer>
+
+
+    </div>
+
+</body>
+
+</html>
